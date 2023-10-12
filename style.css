@@ -93,3 +93,8 @@ button.operator {
   background-color: #f79256;
   color: white;
 }
+
+button[data-toggle=on] {
+  background-color: rgb(70, 70, 70);
+  color: white;
+}
