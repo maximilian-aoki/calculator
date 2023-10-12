@@ -1,0 +1,26 @@
+/* make everything border-box */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* give document background color and fullscreen */
+body {
+  background-color: #D0D9B3;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* use border for debugging flexbox! */
+* {
+  border: 1px solid rgb(255, 193, 193); 
+  margin: 0;
+  padding: 0;
+}
