@@ -2,7 +2,7 @@
 let calc = {
   a: null,
   b: null,
-  currentNumberString: '',
+  currentNumStr: '',
   currentOperator: undefined,
   methods: {
     '+': (num1, num2) => +num1 + +num2,
@@ -21,7 +21,7 @@ function getCurrentOperand() {
 function clearCalculator() {
   calc.a = null;
   calc.b = null;
-  calc.currentNumberString = '';
+  calc.currentNumStr = '';
   calc.currentOperator = undefined;
   output.textContent = 0;
 }
@@ -40,14 +40,47 @@ const buttons = document.querySelector('#button-container');
 buttons.addEventListener('click', (e) => {
   let type = e.target.getAttribute('class');
   if (type === 'number') {
-    console.log(e.target.textContent);
+    addNumber(e.target.textContent);
   } else if (type === 'operator') {
-    console.log(e.target.textContent);
+    useOperator(e.target.textContent);
   } else if (type === 'sign') {
-    console.log("SIGN");
+    useSignChange();
   } else if (type === 'equals') {
-    console.log("EQ");
+    evaluate();
+  } else if (type === 'back-button') {
+    backspace();
   } else if (type === 'clear-button') {
-    console.log("AC");
+    clearCalculator();
   }
+  showOutput();
 });
+
+// all operations based on button input
+
+function addNumber(input) {
+  if (input === '.') {
+    if (calc.currentNumStr === '') {
+      calc.currentNumStr = '0.';
+    } else if (calc.currentNumStr.indexOf('.') === -1) {
+      calc.currentNumStr = calc.currentNumStr + '.';
+    }
+  } else {
+    calc.currentNumStr = calc.currentNumStr + input;
+  }
+}
+
+function useOperator(input) {
+  return;
+}
+
+function useSignChange() {
+  return;
+}
+
+function evaluate() {
+  return;
+}
+
+function backspace() {
+  return;
+}
